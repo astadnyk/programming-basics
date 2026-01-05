@@ -1,2 +1,12 @@
+# Ignore all log files
+*.log
+
+# Ignore all exe files
 *.exe
+
+# Ignore folder and everything inside it
+temp/
 .vscode/
+
+# Ignore a specific file
+.env
