@@ -1,9 +1,14 @@
+/*
+З клавіатури ввести 10 чисел. Знайти добуток перших п’яти 
+та добуток останніх чотирьох чисел.
+*/
+
 #include <iostream>
 using namespace std;
 
 int main() {
     double number;
-    double res1 = 1;
+    double res1 = 1; 
     double res2 = 1;
 
     cout << "Введіть по черзі 10 чисел." << endl;

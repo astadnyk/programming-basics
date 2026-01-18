@@ -1,9 +1,15 @@
+/*
+Задані масиви А, В з n цілих чисел, кількість вводиться з клавіатури.
+Побудувати масив С, в якому кожний елемент дорівнює найбільшому
+спільному дільнику чисел а, b. Використати алгоритм Евкліда.
+*/
+
 #include <iostream>
-#include <vector>
 #include <cstdlib>
 #include <ctime>
 using namespace std;
 
+// Функція для обчислення НСД (Найбільшого Спільного Дільника)
 int calculate(int a, int b) {
     while (b != 0) {
         int temp = b;
@@ -19,11 +25,15 @@ int main() {
     int n;
     cout << "Введіть кількість елементів (n): ";
     cin >> n;
-
-    vector<int> A(n), B(n), C(n);
+    
+    // 1. СТВОРЕННЯ ДИНАМІЧНИХ МАСИВІВ
+    int* A = new int[n];
+    int* B = new int[n];
+    int* C = new int[n];
 
     cout << "\nЗгенеровані масиви:\n";
     
+    // Заповнення та вивід масиву A
     cout << "A:\t";
     for (int i = 0; i < n; i++) {
         A[i] = 1 + rand() % 100;
@@ -31,6 +41,7 @@ int main() {
     }
     cout << endl;
 
+    // Заповнення та вивід масиву B
     cout << "B:\t";
     for (int i = 0; i < n; i++) {
         B[i] = 1 + rand() % 100;
@@ -38,13 +49,22 @@ int main() {
     }
     cout << endl;
 
+    // ОБРОБКА ДАНИХ
+    // Проходимо по кожному елементу масивів
     for (int i = 0; i < n; i++) {
         C[i] = calculate(A[i], B[i]);
     }
 
     cout << "\nРезультат:\nC:\t";
-    for (int x : C) cout << x << "\t";
+    for (int i = 0; i < n; i++) {
+        cout << C[i] << "\t";
+    }
     cout << endl;
+
+    // 2. ЗВІЛЬНЕННЯ ПАМ'ЯТІ
+    delete[] A;
+    delete[] B;
+    delete[] C;
 
     return 0;
 }

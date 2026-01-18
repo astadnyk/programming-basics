@@ -1,3 +1,11 @@
+/*
+Написати код, який би виконував функцію розрахунку алгоритму завдання: 
+y = {
+        1.7 cos^2(x)    x ≤ 1       a = 5.1
+        (x − 4)^2 + a   1 < x < 2
+        5tg(x)          x ≥ 2
+*/
+
 #include <iostream>
 #include <cmath>
 using namespace std;
